@@ -1,5 +1,5 @@
-% ballim = imread('ball.bmp');
-% hsvim = rgb2hsv(ballim);
+ballim = imread('ball.bmp');
+hsvim = rgb2hsv(ballim);
 % hueim = hsvim(:,:,1);
 % bwim = imbinarize(hueim, .1);
 % cbwim = imcomplement(imclose(bwim, strel("disk", 20)));
@@ -15,6 +15,14 @@
 % disp '*** Finish solving 1.1 ***'
 % pause;
 
+vim = hsvim(:,:,3);
+bwim = imbinarize(vim, .4);
+bwim = medfilt2(bwim);
+se = strel('disk', 20);
+justshadow = imclearborder(imcomplement(imclose(imclose(bwim, se), se)));
+vim(justshadow==1) = 1;
+hsvim(:,:,3) = vim;
+imshow(hsv2rgb(hsvim));
 
 horseim1 = imread('Horse1.jpg');
 horseim2 = imread('Horse2.jpg');
