@@ -30,19 +30,7 @@ subplot(2,2,1); bar(h1hist); title("Horse1");
 subplot(2,2,2); bar(h2hist); title("Horse2");
 subplot(2,2,3); bar(e1hist); title("Elephant1");
 subplot(2,2,4); bar(e2hist); title("Elephant2");
-pause;
 
-h1h1score = CalSimilarity(h1hist, h1hist);
-h1h2score = CalSimilarity(h1hist, h2hist);
-h1e1score = CalSimilarity(h1hist, e1hist);
-h1e2score = CalSimilarity(h1hist, e2hist);
-
-h2h2score = CalSimilarity(h2hist, h2hist);
-h2e1score = CalSimilarity(h1hist, e1hist);
-h2e2score = CalSimilarity(h1hist, e2hist);
-
-e1e1score = CalSimilarity(e1hist, e1hist);
-e1e2score = CalSimilarity(h1hist, e1hist);
-figure; title('horse1 as query');
+figure; title('horse1 as query')
 pause;
 close all;
