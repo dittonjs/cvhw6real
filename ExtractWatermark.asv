@@ -1,0 +1,9 @@
+function [wm1, wm2] = ExtractWatermark(inputim1, inputim2)
+    [c1, s1] = wavedec2(inputim1, 3, 'db9');
+    [c2, s2] = wavedec2(inputim1, 3, 'db9');
+end
+
+function wm = BuildWatermark(c, s, b)
+    
+end
+
